@@ -1,7 +1,7 @@
 <template>
   <div class="myCategory">
     <h3>{{title}}</h3>
-      <slot name="default"></slot>
+      <slot name="default" :StudyList="StudyList"></slot>
       <slot name="movie"></slot>
   </div>
 </template>
@@ -11,7 +11,12 @@ export default {
   name: 'MyCategory3',
   props:[
     'title'
-  ]
+  ],
+  data(){
+    return{
+      StudyList:['Vue','Nuxt.js','React']
+    }
+  }
 }
 </script>
 
