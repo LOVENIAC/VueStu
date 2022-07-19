@@ -9,6 +9,8 @@
     name:'app',
     components:{
       MyCount
+    },
+    mounted(){
     }
   }
 </script>
