@@ -1,14 +1,19 @@
 <template>
-  <MyCount />
+  <div>
+    <myCount />
+    <myMovie />
+  </div>
 </template>
 
 <script>
-  import MyCount from './components/MyCount'
+  import myCount from './components/Count'
+  import myMovie from './components/Movie'
 
   export default {
     name:'app',
     components:{
-      MyCount
+      myCount,
+      myMovie
     },
     mounted(){
     }

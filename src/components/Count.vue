@@ -3,6 +3,7 @@
     <h1>当前求和为:{{sum}}</h1>
     <h2>当前值乘10为:{{bigSum}}</h2>
     <h2>{{name}} like {{hobby}}</h2>
+    <h2>Movies total:{{movies.length}}</h2>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -18,7 +19,7 @@
 <script>
   import {mapState,mapGetters,mapMutations,mapActions} from 'vuex';
   export default {
-    name: 'MyCount',
+    name: 'myCount',
     data(){
       return{
         n: 1
@@ -39,9 +40,9 @@
       // ********************************************************
 
       // 借助mapState生成计算属性，从state中读取数据（对象写法）
-      ...mapState({sum:'sum',name:'name',hobby:'hobby'}),
+      //...mapState({sum:'sum',name:'name',hobby:'hobby'}),
       // 借助mapState生成计算属性，从state中读取数据（数组写法）
-      // ...mapState(['sum','name','hobby']),
+      ...mapState(['sum','name','hobby','movies']),
 
       // 借助mapGetters生成计算属性，从getters中读取数据（对象写法）
       // ...mapGetters({bigSum:'bigSum'}),

@@ -12,6 +12,14 @@ const actions = {
     },
     decrement(content,value){
         content.commit('DECREMENT',value);
+    },
+    addMovie(minStore,value){
+        if(!value.trim()) return console.log("Please input a movie");
+        const movieObj = {
+            id:state.movies.length+1,
+            name:value
+        }
+        minStore.commit('ADDMOVIE',movieObj)
     }
 }
 // 准备mutations-用于操作数据
@@ -21,13 +29,21 @@ const mutations = {
     },
     DECREMENT(state,value){
         state.sum -= value;
+    },
+    ADDMOVIE(state,value){
+        state.movies.push(value)
     }
 }
 // 准备state-用于存储数据
 const state = {
     sum:0,
     name:'Pujie',
-    hobby:'Travel'
+    hobby:'Travel',
+    movies:[
+        {id:1,name:'See u PuJie'},
+        {id:2,name:'SpiderMan'},
+        {id:3,name:'Hacker'},
+    ]
 }
 
 const getters = {
